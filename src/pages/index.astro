@@ -1,0 +1,91 @@
+---
+import { Image } from 'astro:assets'
+
+import Layout from '../layouts/Layout.astro'
+import { SITE_NAME } from '../lib/constants'
+import EncryptedEmail from '../components/EncryptedEmail.svelte'
+
+import fredrik from '../assets/fredrik-aug-19.jpg'
+---
+
+<Layout>
+    <!--
+
+    Om mig
+    Brett erfarenhetsområde inom musik. Både som musikant i olika orkestrar och ensembler. 
+    Hjärteprojektet är min egen grupp Brass MC men även Borås symfoniorkester och Hvmk Göteborg där jag spelat 
+    
+    Musikaliska sidoprojekt. Har jobbat med musik för riktigt små barn. Har lett babyrytmikgrupper i över 20 år på bland annat Bollebygds bibliotek. 
+    Fortbildningsdagar med inriktning musik för små barn. 
+    Har även jobbat med körsång som friskvård. Både som en återkommande friskvårdsaktivitet och som en speciell händelse vid kick-off och teambuilding-dagar.
+
+    Jobbar också som musiklärare med inriktining brassinstrument, orkester och babyrytmik vid Borås Kulturskola.
+
+    
+
+    Besök även min sida för undervisning: https://ks.plumppumusik.se
+
+    -->
+
+    <Image
+        src={fredrik}
+        alt="Fredrik Plumppu"
+        class="mx-auto my-8 w-full max-w-64 rounded-xl"
+    />
+
+    <section class="grid justify-center text-center">
+        <h1
+            class="mb-8 text-balance px-4 text-4xl font-black leading-none tracking-tight xs:text-5xl sm:text-6xl lg:text-7xl"
+        >
+            Hej! Mitt namn är Fredrik.
+        </h1>
+        <h2
+            class="mb-12 text-xl font-black leading-6 tracking-tight sm:text-3xl lg:text-4xl"
+        >
+            <div class="-skew-y-1 transform bg-brand p-2 shadow-2xl">
+                <span class="whitespace-nowrap">Stort hjärta för musik</span>
+            </div>
+        </h2>
+    </section>
+
+    <section class="mx-auto grid max-w-prose grid-cols-1 px-4">
+        <p class="mb-4 text-xl sm:text-2xl">
+            Musik till festliga sammanhang -både som solist och med Brass MC.
+            Spelar trumpet och kan på beställning specialskriva musik som passar
+            för dig och ditt tillfälle. Stort kontaktnät med skickliga
+            musikanter.
+        </p>
+        <p class="mb-4 text-xl sm:text-2xl">
+            <!--
+                TODO: Lägg till länkar
+
+                Instagram Plumppumusik
+                Fb Plumppumusik https://www.facebook.com/plumppumusik
+                Linkedin Fredrik Plumppu https://www.linkedin.com/in/fredrik-plumppu-243084a2/
+                Github https://github.com/trueplu
+            -->
+        </p>
+    </section>
+
+    <div class="grid place-content-center">
+        <EncryptedEmail />
+    </div>
+
+    <footer
+        class="flex flex-wrap items-center justify-center px-4 py-8 sm:gap-4"
+    >
+        <p>
+            © <span id="year">{new Date().getFullYear()}</span>
+            {SITE_NAME}
+        </p>
+    </footer>
+</Layout>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const year = document.querySelector('#year')
+        if (year) {
+            year.textContent = new Date().getFullYear().toString()
+        }
+    })
+</script>
