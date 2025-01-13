@@ -92,7 +92,7 @@
     {href}
     onpointerenter={once(showEmail)}
     onfocusin={once(showEmail)}
-    class="bg-brand inline-flex items-center gap-2 rounded-full text-black transition-colors duration-200 hover:bg-opacity-75 {className ||
+    class="inline-flex items-center gap-2 rounded-full bg-brand text-black transition-colors duration-200 hover:bg-opacity-75 {className ||
         ''} {compact ? 'p-2 xs:px-4' : 'px-6 py-3'}"
     {style}
 >
