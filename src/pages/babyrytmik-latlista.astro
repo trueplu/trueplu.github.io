@@ -10,56 +10,67 @@ const songs = [
     },
     {
         name: 'Jag lyfter dig upp',
+        lyric: 'Jag lyfter dig upp, vi ser på varann’ nu snurrar vi runt som i dans, ja vi tar oss en vals. Jag håller dig nära intill mig, jag känner ditt hjärta slå mot mig. Min lilla fina baby, jag älskar dig!',
         book: '',
         publisher: 'FS studieförbund',
     },
     {
         name: 'Stor våg, liten våg',
+        lyric: '',
         book: 'Gunga lite grann',
         publisher: 'Natur & Kultur',
     },
     {
         name: 'Hej och hå min lilla tå',
+        lyric: '',
         book: 'Minitrams 2 -CD',
         publisher: 'Bönan Records',
     },
     {
         name: 'Tillsammans',
+        lyric: '',
         book: 'Låtar som tänder',
         publisher: 'Lutfisken',
     },
     {
         name: 'Kalla förstås',
+        lyric: '',
         book: 'Musiklek',
         publisher: 'Musikrummet',
     },
     {
         name: 'Fem små fingrar',
+        lyric: '',
         book: 'Musiklek',
         publisher: 'Musikrummet',
     },
     {
         name: 'Vi sitter här och skramlar',
+        lyric: '',
         book: 'Elefantboken',
         publisher: 'Lutfisken',
     },
     {
         name: 'Vyss lull lilla palt',
+        lyric: '',
         book: 'Klas Klättermus visor',
         publisher: 'Bonniers',
     },
     {
         name: 'Namnhejsan',
+        lyric: '',
         book: 'Till din baby',
         publisher: 'Plumppu Musikproduktion',
     },
     {
         name: 'Spela maraccas',
+        lyric: '',
         book: 'Till din baby',
         publisher: 'Plumppu Musikproduktion',
     },
     {
         name: 'Gungtur med båten',
+        lyric: '',
         book: 'Till din baby',
         publisher: 'Plumppu Musikproduktion',
     },
@@ -120,13 +131,13 @@ const songs = [
     <main class="mx-auto max-w-screen-md">
         <h1 class="my-8 text-xl font-bold">Låtar och ramsor för babyrytmik</h1>
 
-        <div class="grid gap-1">
+        <div class="grid max-w-prose gap-1">
             {
                 songs.map((song) => (
                     <details class="bg-white">
                         <summary class="p-2">{song.name}</summary>
                         <div class="mb-4 px-4">
-                            <p>Text: {song.lyric}</p>
+                            {song.lyric && <p>Text: {song.lyric}</p>}
                             {song.book && <p>Bok: {song.book}</p>}
                             <p>Förlag: {song.publisher}</p>
                             {/* IDEA: Show the song text */}
