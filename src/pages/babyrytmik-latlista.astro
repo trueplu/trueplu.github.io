@@ -1,0 +1,138 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+const songs = [
+    {
+        name: 'Goddá, hej hopp!',
+        book: 'Flyg lilla fjäril',
+        publisher: 'Lutfisken',
+    },
+    {
+        name: 'Jag lyfter dig upp',
+        book: '',
+        publisher: 'FS studieförbund',
+    },
+    {
+        name: 'Stor våg, liten våg',
+        book: 'Gunga lite grann',
+        publisher: 'Natur & Kultur',
+    },
+    {
+        name: 'Hej och hå min lilla tå',
+        book: 'Minitrams 2 -CD',
+        publisher: 'Bönan Records',
+    },
+    {
+        name: 'Tillsammans',
+        book: 'Låtar som tänder',
+        publisher: 'Lutfisken',
+    },
+    {
+        name: 'Kalla förstås',
+        book: 'Musiklek',
+        publisher: 'Musikrummet',
+    },
+    {
+        name: 'Fem små fingrar',
+        book: 'Musiklek',
+        publisher: 'Musikrummet',
+    },
+    {
+        name: 'Vi sitter här och skramlar',
+        book: 'Elefantboken',
+        publisher: 'Lutfisken',
+    },
+    {
+        name: 'Vyss lull lilla palt',
+        book: 'Klas Klättermus visor',
+        publisher: 'Bonniers',
+    },
+    {
+        name: 'Namnhejsan',
+        book: 'Till din baby',
+        publisher: 'Plumppu Musikproduktion',
+    },
+    {
+        name: 'Spela maraccas',
+        book: 'Till din baby',
+        publisher: 'Plumppu Musikproduktion',
+    },
+    {
+        name: 'Gungtur med båten',
+        book: 'Till din baby',
+        publisher: 'Plumppu Musikproduktion',
+    },
+    {
+        name: 'Kan du dansa',
+        book: 'Till din baby',
+        publisher: 'Plumppu Musikproduktion',
+    },
+    {
+        name: 'Rida i galoppsan',
+        book: 'Till din baby',
+        publisher: 'Plumppu Musikproduktion',
+    },
+    {
+        name: 'Fåglarna flyger',
+        book: 'Till din baby',
+        publisher: 'Plumppu Musikproduktion',
+    },
+    {
+        name: 'Nalles vaggsång',
+        book: 'Till din baby',
+        publisher: 'Plumppu Musikproduktion',
+    },
+    {
+        name: 'Hur rider pappa',
+        book: '',
+        publisher: '(traditionell)',
+    },
+    {
+        name: 'Lilltåa',
+        book: 'Visor i väntan',
+        publisher: 'Proprius',
+    },
+    {
+        name: 'Spring efter vatten',
+        book: 'Visor i väntan',
+        publisher: 'Proprius',
+    },
+    {
+        name: 'Kille-kille-kill',
+        book: 'Lilla Vickevire och hans vänner',
+        publisher: 'Lutfisken',
+    },
+    {
+        name: 'Bomchicka',
+        book: '',
+        publisher: '(traditionell)',
+    },
+    {
+        name: 'Jag vill ha mat sa tummetott',
+        book: 'Rim och ramsor för händer, fötter och kropp',
+        publisher: 'Bonnier Carlsen',
+    },
+]
+---
+
+<Layout>
+    <main class="mx-auto max-w-screen-md">
+        <h1 class="my-8 text-xl font-bold">Låtar och ramsor för babyrytmik</h1>
+
+        <div class="grid gap-1">
+            {
+                songs.map((song) => (
+                    <details class="bg-white">
+                        <summary class="p-2">{song.name}</summary>
+                        <div class="mb-4 px-4">
+                            {song.book && <p>Bok: {song.book}</p>}
+                            <p>Förlag: {song.publisher}</p>
+                            {/* IDEA: Show the song text */}
+                            {/* IDEA: Embed spotify link to listen to the song (if available) */}
+                        </div>
+                    </details>
+                ))
+            }
+        </div>
+    </main>
+</Layout>
