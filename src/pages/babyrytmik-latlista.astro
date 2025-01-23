@@ -106,8 +106,7 @@ const songs = [
     },
     {
         name: 'Lilltåa',
-        lyric: 'Lilltåa, Tåtilla, Tillerosa, Kroknosa och Stortampen upp i vädret!
-',
+        lyric: 'Lilltåa, Tåtilla, Tillerosa, Kroknosa och Stortampen upp i vädret!',
         book: 'Visor i väntan',
         publisher: 'Proprius',
     },
@@ -146,7 +145,7 @@ const songs = [
             {
                 songs.map((song) => (
                     <details class="bg-white">
-                        <summary class="p-2">{song.name}</summary>
+                        <summary class="p-2 font-bold">{song.name}</summary>
                         <div class="mb-4 px-4">
                             {song.lyric && <p>Text: {song.lyric}</p>}
                             {song.book && <p>Bok: {song.book}</p>}
