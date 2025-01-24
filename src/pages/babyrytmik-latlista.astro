@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import { SITE_NAME } from '../lib/constants'
+import EncryptedEmail from '../components/EncryptedEmail.svelte'
 
 const songs = [
     {
@@ -157,8 +159,14 @@ const songs = [
                 ))
             }
         </div>
-        <!-- IDEA: Show the first N songs, and fade out the bottom section, with a centered button shown on top "Visa alla" to expand the full list -->
-        <!-- IDEA: Show a section with heading, image, description and links to learn more about the book Till din baby -->
-        <!--http://localhost:4321/babyrytmik-latlista    -->
-    </main>
-</Layout>
+        <!-- IDEA: Show the first N songs, and fade out the bottom section, with a centered button shown on top "Visa alla" to expand the full list --><!-- IDEA: Show a section with heading, image, description and links to learn more about the book Till din baby --><!--http://localhost:4321/babyrytmik-latlista    -->
+        <footer
+            class="flex flex-wrap items-center justify-center px-4 py-8 sm:gap-4"
+        >
+            <p>
+                © <span id="year">{new Date().getFullYear()}</span>
+                {SITE_NAME}
+            </p>
+        </footer>
+    </main></Layout
+>
