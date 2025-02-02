@@ -1,18 +1,19 @@
 ---
+import { Image } from 'astro:assets'
+
 import Layout from '../layouts/Layout.astro'
-import { SITE_NAME } from '../lib/constants'
-import EncryptedEmail from '../components/EncryptedEmail.svelte'
+import tillDinBaby from '../assets/Till-din-baby_haftad.jpg'
 
 const songs = [
     {
-        name: 'Godda', hej hopp!',
-        lyric: 'Godda' hej hopp välkomna till alla här. Godda', godda', godda' Vi ska sjunga, vi ska dansa och ha det bra. Goddá, goddá, goddá Tra la la la…..',
+        name: 'Godda´, hej hopp!',
+        lyric: 'Godda´ hej hopp välkomna till alla här.\nGodda´, godda´, godda´\nVi ska sjunga, vi ska dansa och ha det bra.\nGodda´, godda´, godda´ \nTra la la la…',
         book: 'Flyg lilla fjäril',
         publisher: 'Lutfisken',
     },
     {
         name: 'Jag lyfter dig upp',
-        lyric: 'Jag lyfter dig upp, vi ser på varann' nu snurrar vi runt som i dans, ja vi tar oss en vals. Jag håller dig nära intill mig, jag känner ditt hjärta slå mot mig. Min lilla fina baby, jag älskar dig!',
+        lyric: 'Jag lyfter dig upp, vi ser på varann´\nNu snurrar vi runt som i dans, ja vi tar oss en vals.\nJag håller dig nära intill mig,\njag känner ditt hjärta slå mot mig.\nMin lilla fina baby, jag älskar dig!',
         book: '',
         publisher: 'FS studieförbund',
     },
@@ -48,19 +49,19 @@ const songs = [
     },
     {
         name: 'Vi sitter här och skramlar',
-        lyric: 'Vi sitter här och skramlar. Vi sitter här och skramlar med tamburiner, maraccas, maraccas. Maraccas, maracas det låter bra Vi spelar skrammel här idag. Skramla, skramla………',
+        lyric: 'Vi sitter här och skramlar.\nVi sitter här och skramlar\nmed tamburiner, maraccas, maraccas.\nMaraccas, maracas det låter bra\nVi spelar skrammel här idag.\nSkramla, skramla…',
         book: 'Elefantboken',
         publisher: 'Lutfisken',
     },
     {
         name: 'Vyss lull lilla palt',
-        lyric: 'Vyss lull lilla palt, leka får du sedan. Alla musbarn överallt, sover allaredan. Somna sött i vaggan din, jag ska inte störa. Räven sover också nu, med svansen under örat.',
+        lyric: 'Vyss lull lilla palt, leka får du sedan.\nAlla musbarn överallt, sover allaredan.\nSomna sött i vaggan din, jag ska inte störa.\nRäven sover också nu, med svansen under örat.',
         book: 'Klas Klättermus visor',
         publisher: 'Bonniers',
     },
     {
         name: 'Namnhejsan',
-        lyric: '//: Hejsan Philip, hej på dig. Kul o'se dej här igen. :// Välkomna alla nu sjunger vi. Vi hoppar och dansar och virvlar runt. Vilma är här, Hulda är här, Lisa är här, Jakob och Max är här.	',
+        lyric: '//: Hejsan Philip, hej på dig.\nKul o´se dej här igen. ://\nVälkomna alla nu sjunger vi.\nVi hoppar och dansar och virvlar runt.\nVilma är här\nHulda är här\nLisa är här\nJakob och Max är här.',
         book: 'Till din baby',
         publisher: 'Plumppu Musikproduktion',
     },
@@ -72,7 +73,7 @@ const songs = [
     },
     {
         name: 'Gungtur med båten',
-        lyric: 'Gung, gung, gungeligung, gunga här med mig en stund. Vi ska ut och ro nu. Gung, gung, gungeligung, gunga här med mig en stund. Gung, gung, gungeligung, gunga här med mig en stund. Vi ror ut på havet.				',
+        lyric: 'Gung, gung, gungeligung\ngunga här med mig en stund.\nVi ska ut och ro nu.\nGung, gung, gungeligung\ngunga här med mig en stund.\nGung, gung, gungeligung\ngunga här med mig en stund.\nVi ror ut på havet.',
         book: 'Till din baby',
         publisher: 'Plumppu Musikproduktion',
     },
@@ -108,7 +109,7 @@ const songs = [
     },
     {
         name: 'Lilltåa',
-        lyric: 'Lilltåa, Tåtilla, Tillerosa, Kroknosa och Stortampen upp i vädret!',
+        lyric: 'Lilltåa, Tåtilla, Tillerosa\nKroknosa och Stortampen upp i vädret!',
         book: 'Visor i väntan',
         publisher: 'Proprius',
     },
@@ -120,7 +121,7 @@ const songs = [
     },
     {
         name: 'Kille-kille-kill',
-        lyric: 'Först kommer Tummetott, säger, ska vi göra nåt? Ja säger Pek, vi kan väl leka en lek? Nej säger Lång, jag vill hellre sjunga en sång. Usch säger Ring, jag vill ingenting. Då säger Lill, vet ni vad jag vill? Kille-kill, kille-kill!',
+        lyric: 'Först kommer Tummetott, säger, ska vi göra nåt?\nJa säger Pek, vi kan väl leka en lek?\nNej säger Lång, jag vill hellre sjunga en sång.\nUsch säger Ring, jag vill ingenting.\nDå säger Lill, vet ni vad jag vill?\nKille-kill, kille-kill!',
         book: 'Lilla Vickevire och hans vänner',
         publisher: 'Lutfisken',
     },
@@ -132,41 +133,86 @@ const songs = [
     },
     {
         name: 'Jag vill ha mat sa tummetott',
-        lyric: 'Jag vill ha mat sa Tummetott. Vart ska vi ta't sa Slickepott. I mors skafferi sa Långeman. Men då skvallrar lilla Vickevire, sa Gullebrand. Ja, det gör jag sa lilla Vickevire.',
+        lyric: 'Jag vill ha mat sa Tummetott.\nVart ska vi ta´t sa Slickepott.\nI mors skafferi sa Långeman.\nMen då skvallrar lilla Vickevire, sa Gullebrand.\nJa, det gör jag sa lilla Vickevire.',
         book: 'Rim och ramsor för händer, fötter och kropp',
         publisher: 'Bonnier Carlsen',
     },
 ]
 ---
 
-<Layout>
-    <main class="mx-auto max-w-screen-md">
-        <h1 class="my-8 text-xl font-bold">Låtar och ramsor för babyrytmik</h1>
+<Layout title="Låtar och ramsor för babyrytmik">
+    <main class="mx-auto max-w-prose">
+        <h1
+            class="my-8 text-balance text-center text-xl font-bold sm:text-2xl md:text-3xl"
+        >
+            Låtar och ramsor för babyrytmik
+        </h1>
 
-        <div class="grid max-w-prose gap-1">
+        <div class="mx-auto grid max-w-prose gap-1">
             {
                 songs.map((song) => (
                     <details class="bg-white">
                         <summary class="p-2 font-bold">{song.name}</summary>
                         <div class="mb-4 px-4">
-                            {song.lyric && <p>Text: {song.lyric}</p>}
-                            {song.book && <p>Bok: {song.book}</p>}
-                            <p>Förlag: {song.publisher}</p>
-                            {/* IDEA: Show the song text */}
+                            {song.lyric && (
+                                <div class="pb-4">
+                                    <p class="font-bold">Text:</p>
+                                    <p class="whitespace-pre">{song.lyric}</p>
+                                </div>
+                            )}
+                            <div>
+                                {song.book && (
+                                    <p>
+                                        <span class="font-bold">Bok:</span>{' '}
+                                        {song.book}
+                                    </p>
+                                )}
+                                {song.publisher && (
+                                    <p>
+                                        <span class="font-bold">Förlag:</span>{' '}
+                                        {song.publisher}
+                                    </p>
+                                )}
+                            </div>
                             {/* IDEA: Embed spotify link to listen to the song (if available) */}
                         </div>
                     </details>
                 ))
             }
         </div>
-        <!-- IDEA: Show the first N songs, and fade out the bottom section, with a centered button shown on top "Visa alla" to expand the full list --><!-- IDEA: Show a section with heading, image, description and links to learn more about the book Till din baby --><!--http://localhost:4321/babyrytmik-latlista    -->
-        <footer
-            class="flex flex-wrap items-center justify-center px-4 py-8 sm:gap-4"
-        >
+        {
+            /*
+
+        IDEA: Show the first N songs, and fade out the bottom section, with a centered button shown on top "Visa alla" to expand the full list
+        
+        */
+        }
+
+        <section class="mx-auto mt-16 grid max-w-sm gap-4 bg-white p-4">
+            <h2 class="col-span-full pb-4 text-2xl font-bold">
+                Sångboken Till din baby
+            </h2>
+
+            <Image
+                src={tillDinBaby}
+                alt="Bokomslag för Till din baby"
+                class="mx-auto"
+            />
+
             <p>
-                © <span id="year">{new Date().getFullYear()}</span>
-                {SITE_NAME}
+                Flera av sångerna i rytmikstunden är hämtade från den egna boken
+                Till din baby. Boken innehåller låttexter, noter och
+                ackordanalys. Lyssna på den medföljande CD-skivan, sjung med och
+                ha kul! Utmärkt som dopgåva eller present.
             </p>
-        </footer>
-    </main></Layout
->
+
+            <div class="flex justify-center">
+                <a
+                    class="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3 text-black transition-colors duration-200 hover:bg-opacity-75"
+                    href="https://www.bokus.com/bok/9789163189760/till-din-baby/"
+                    target="_blank">Köp sångboken Till din baby</a
+                >
+            </div>
+        </section>
+    </main>
+</Layout>
