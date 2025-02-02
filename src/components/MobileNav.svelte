@@ -43,7 +43,7 @@
 
     <div
         class:hidden={!open}
-        class="fixed bottom-0 left-0 right-0 top-16 z-30 bg-white pt-16 sm:pt-32"
+        class="fixed bottom-0 left-0 right-0 top-16 z-30 bg-sky-200 pt-16 sm:pt-32"
         onclickcapture={() => {
             toggle()
         }}

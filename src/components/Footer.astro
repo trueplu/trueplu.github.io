@@ -1,0 +1,51 @@
+---
+import { SITE_NAME } from '../lib/constants'
+import EncryptedEmail from '../components/EncryptedEmail.svelte'
+---
+
+<footer class="grid justify-center gap-8 px-4 py-8 text-center">
+    <div class="grid place-content-center">
+        <EncryptedEmail client:load />
+    </div>
+
+    <div class="text-sm">
+        <p class="pb-4">
+            © <span id="year">{new Date().getFullYear()}</span>
+            {SITE_NAME}
+        </p>
+
+        <p>Trumpet och musik i Borås och Göteborg med omnejd.</p>
+    </div>
+
+    <div class="flex flex-wrap items-center justify-center gap-3">
+        <a
+            href="https://www.linkedin.com/in/fredrik-plumppu-243084a2/"
+            target="_blank"
+            class="text-sky-900 underline">LinkedIn</a
+        >
+        <a
+            href="https://www.instagram.com/plumppumusik"
+            target="_blank"
+            class="text-sky-900 underline">Instagram</a
+        >
+        <a
+            href="https://www.facebook.com/plumppumusik"
+            target="_blank"
+            class="text-sky-900 underline">Facebook</a
+        >
+        <a
+            href="https://github.com/trueplu"
+            target="_blank"
+            class="text-sky-900 underline">GitHub</a
+        >
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const year = document.querySelector('#year')
+        if (year) {
+            year.textContent = new Date().getFullYear().toString()
+        }
+    })
+</script>

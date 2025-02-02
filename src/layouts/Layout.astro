@@ -1,8 +1,9 @@
 ---
 import '@fontsource-variable/nunito'
 
-// import Navigation from '../components/Navigation.astro'
+import Navigation from '../components/Navigation.astro'
 import { SITE_NAME, SITE_DESCRIPTION, DEFAULT_LOCALE } from '../lib/constants'
+import Footer from '../components/Footer.astro'
 
 export interface Props {
     title?: string
@@ -41,9 +42,11 @@ const PAGE_TITLE = `${title ? `${title} | ` : ''}${SITE_NAME}`
     </head>
     <body>
         <div id="content">
-            <!-- <Navigation /> -->
+            <Navigation />
 
             <slot />
+
+            <Footer />
         </div>
     </body>
 </html>
