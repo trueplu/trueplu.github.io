@@ -2,14 +2,12 @@
 import { Image } from 'astro:assets'
 
 import Layout from '../layouts/Layout.astro'
-import { SITE_NAME } from '../lib/constants'
-import EncryptedEmail from '../components/EncryptedEmail.svelte'
-
 import fredrik from '../assets/fredrik-aug-19.jpg'
 ---
 
 <Layout>
-    <!--
+    {
+        /*
 
     Om mig
     Brett erfarenhetsområde inom musik. Både som musikant i olika orkestrar och ensembler. 
@@ -25,7 +23,8 @@ import fredrik from '../assets/fredrik-aug-19.jpg'
 
     Besök även min sida för undervisning: https://ks.plumppumusik.se
 
-    -->
+    */
+    }
 
     <Image
         src={fredrik}
@@ -37,7 +36,7 @@ import fredrik from '../assets/fredrik-aug-19.jpg'
         <h1
             class="mb-8 text-balance px-4 text-4xl font-black leading-none tracking-tight xs:text-5xl sm:text-6xl lg:text-7xl"
         >
-            Hej! Mitt namn är Fredrik.
+            Plumppu Musikproduktion
         </h1>
         <h2
             class="mb-12 text-xl font-black leading-6 tracking-tight sm:text-3xl lg:text-4xl"
@@ -50,42 +49,31 @@ import fredrik from '../assets/fredrik-aug-19.jpg'
 
     <section class="mx-auto grid max-w-prose grid-cols-1 px-4">
         <p class="mb-4 text-xl sm:text-2xl">
-            Musik till festliga sammanhang -både som solist och med Brass MC.
+            Musik till festliga sammanhang - både som solist och med Brass MC.
             Spelar trumpet och kan på beställning specialskriva musik som passar
             för dig och ditt tillfälle. Stort kontaktnät med skickliga
             musikanter.
         </p>
+
+        {
+            /**
+
         <p class="mb-4 text-xl sm:text-2xl">
-            <!--
-                TODO: Lägg till länkar
-
-                Instagram Plumppumusik https://www.instagram.com/plumppumusik
-                Fb Plumppumusik https://www.facebook.com/plumppumusik
-                Linkedin Fredrik Plumppu https://www.linkedin.com/in/fredrik-plumppu-243084a2/
-                Github https://github.com/trueplu
-            -->
+            Mitt namn är Fredrik och [min bakgrund, erfarenheter]
         </p>
-    </section>
 
-    <div class="grid place-content-center">
-        <EncryptedEmail client:load />
-    </div>
+        <div class="mb-4 text-xl sm:text-2xl">
+            Lista: Vad erbjuder du för musik:
 
-    <footer
-        class="flex flex-wrap items-center justify-center px-4 py-8 sm:gap-4"
-    >
-        <p>
-            © <span id="year">{new Date().getFullYear()}</span>
-            {SITE_NAME}
-        </p>
-    </footer>
-</Layout>
+            <ul>
+                <li>Trumpet</li>
+                <li>Festliga sammanhang</li>
+                <li>Babyrytmik</li>
+                <li>Bröllop, dop och begravningar</li>
+            </ul>
+        </div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const year = document.querySelector('#year')
-        if (year) {
-            year.textContent = new Date().getFullYear().toString()
+        */
         }
-    })
-</script>
+    </section>
+</Layout>
