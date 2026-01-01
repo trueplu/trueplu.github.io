@@ -9,7 +9,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "encrypt-text": "node --env-file=.env scripts/encrypt-text.js",
-    "publish-update": "pnpm run build && gh-pages -d dist -b 2025 -t"
+    "publish-update": "pnpm run build && gh-pages -d dist -b main -t"
   },
   "dependencies": {
     "@astrojs/svelte": "^7.0.3",
