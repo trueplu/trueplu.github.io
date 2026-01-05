@@ -1,7 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro'
-;<Layout>
-    {/*
+---
+
+<Layout>
+    {
+        /*
 
     Om mig
     Brett erfarenhetsområde inom musik. Både som musikant i olika orkestrar och ensembler. 
@@ -17,13 +20,18 @@ import Layout from '../layouts/Layout.astro'
 
     Besök även min sida för undervisning: https://ks.plumppumusik.se
 
-    */}
+    */
+    }
 
     <section class="grid justify-center text-center">
-        <h1 class="mb-8 text-balance px-4 text-4xl font-black leading-none tracking-tight xs:text-5xl sm:text-6xl lg:text-7xl">
+        <h1
+            class="mb-8 text-balance px-4 text-4xl font-black leading-none tracking-tight xs:text-5xl sm:text-6xl lg:text-7xl"
+        >
             Plumppu Musikproduktion
         </h1>
-        <h2 class="mb-12 text-xl font-black leading-6 tracking-tight sm:text-3xl lg:text-4xl">
+        <h2
+            class="mb-12 text-xl font-black leading-6 tracking-tight sm:text-3xl lg:text-4xl"
+        >
             <div class="-skew-y-1 transform bg-brand p-2 shadow-2xl">
                 <span class="whitespace-nowrap">Stort hjärta för musik</span>
             </div>
@@ -38,7 +46,8 @@ import Layout from '../layouts/Layout.astro'
             musikanter.
         </p>
 
-        {/**
+        {
+            /**
 
         <p class="mb-4 text-xl sm:text-2xl">
             Mitt namn är Fredrik och [min bakgrund, erfarenheter]
@@ -55,7 +64,7 @@ import Layout from '../layouts/Layout.astro'
             </ul>
         </div>
 
-        */}
+        */
+        }
     </section>
 </Layout>
----
